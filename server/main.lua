@@ -358,7 +358,7 @@ ESX.RegisterServerCallback('esx_vehicleshop:resellVehicle', function(source, cb,
 						local vehicle = json.decode(result[1].vehicle)
 
 						if vehicle.model == model then
-							if vehicle.plate == plate then
+							if vehicle.plate == plate or vehicle.plate == plate ..' ' then
 								xPlayer.addMoney(resellPrice)
 								RemoveOwnedVehicle(plate)
 								cb(true)
@@ -380,7 +380,7 @@ ESX.RegisterServerCallback('esx_vehicleshop:resellVehicle', function(source, cb,
 									local vehicle = json.decode(result[1].vehicle)
 
 									if vehicle.model == model then
-										if vehicle.plate == plate then
+										if vehicle.plate == plate or vehicle.plate == plate ..' ' then
 											xPlayer.addMoney(resellPrice)
 											RemoveOwnedVehicle(plate)
 											cb(true)
